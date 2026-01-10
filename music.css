@@ -1,0 +1,163 @@
+/* Reset & Global */
+:root {
+    --primary-color: #ff0000;
+    --bg-color: #050505;
+    --text-color: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Montserrat', sans-serif; background-color: var(--bg-color); color: var(--text-color); }
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+/* Navbar (Repeated for independence) */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    z-index: 1000;
+    background: #000;
+}
+.logo { font-family: 'Oswald', sans-serif; font-size: 1.5rem; color: var(--primary-color); font-weight: 700; letter-spacing: 2px; }
+.nav-links { list-style: none; display: flex; gap: 30px; }
+.nav-links li a { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; color: #ddd; }
+.nav-links li a:hover, .nav-links li a.active { color: var(--primary-color); }
+.hamburger { display: none; font-size: 1.5rem; cursor: pointer; color: #fff; }
+
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; background-color: #000;
+    display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 30px;
+    transition: 0.4s; z-index: 2000;
+}
+.mobile-menu.active { right: 0; }
+.mobile-menu a { font-family: 'Oswald', sans-serif; font-size: 2rem; text-transform: uppercase; color: #fff; }
+.mobile-menu a:hover { color: var(--primary-color); }
+.close-menu { position: absolute; top: 20px; right: 30px; font-size: 3rem; cursor: pointer; color: #fff; }
+
+/* Page Content */
+.page-header {
+    margin-top: 80px;
+    padding: 60px 20px;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://picsum.photos/seed/chibossconcert/1920/600');
+    background-size: cover;
+    background-position: center;
+}
+
+.page-header h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.section-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #fff;
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block;
+}
+
+.music-section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Platform Grid */
+.platform-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.platform-card {
+    background: #111;
+    padding: 30px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #222;
+}
+
+.platform-card:hover {
+    background: #1a1a1a;
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.platform-card i {
+    font-size: 3rem;
+    color: #fff;
+}
+
+.platform-card span {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Buy Buttons */
+.buy-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.buy-btn {
+    padding: 15px 40px;
+    border: 2px solid #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.buy-btn:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* QR Code */
+.qr-container {
+    display: inline-block;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.qr-code {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px;
+}
+
+.qr-container p {
+    color: #000;
+    font-weight: 700;
+    max-width: 200px;
+}
+
+/* Footer */
+footer { padding: 40px 20px; background-color: #000; text-align: center; border-top: 1px solid #222; }
+.social-icons a { font-size: 1.5rem; margin: 0 15px; color: #fff; }
+.social-icons a:hover { color: var(--primary-color); }
+footer p { font-size: 0.8rem; color: #666; margin-top: 10px; }
+
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: block; }
+}
